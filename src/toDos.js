@@ -9,7 +9,8 @@ export default class toDoItem {
         this.divTareas = divTareas;
     }
     crearToDo(divTareas) {
-        divTareas.innerHTML += `div class="tarea">
+        divTareas.innerHTML += `
+            <div class="tarea">
             <h1>${this.title}</h1>
             <p>${this.desc}</p>
             <span>${this.date}</span>
