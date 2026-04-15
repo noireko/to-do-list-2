@@ -7,14 +7,18 @@ const divTareas = document.getElementById("div-tareas")
 import "./style.css"
 import toDoItem from "./toDos.js"
 
-btnSubmit.addEventListener("click", () => {
+btnSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+
     const tarea = new toDoItem(
         title.value,
         desc.value,
         date.value
     );
+
     tarea.crearToDo(divTareas);
+
     title.value = "";
     desc.value = "";
     date.value = "";
-})
+});
