@@ -1,20 +1,14 @@
 // 1 - clase toDo, que acepte el valor de los inputs de Tutiulo, Descripcion, Fecha y Prioridad
 // 2 - que la clase tenga propiedades de agregar todo, eliminar item, cambiar prioridad de todo, setear todo como completo, etc
 
-const title = document.getElementById("title");
-const desc = document.getElementById("desc");
-const date = document.getElementById("date");
-const btnSubmit = document.getElementById("btn-submit");
-const divTareas = document.getElementById("div-tareas")
-
-class toDoItem {
+export default class toDoItem {
     constructor(title, desc, date, divTareas) {
         this.title = title;
         this.desc = desc;
         this.date = date;
         this.divTareas = divTareas;
     }
-    crearToDo() {
+    crearToDo(divTareas) {
         divTareas.innerHTML += `div class="tarea">
             <h1>${this.title}</h1>
             <p>${this.desc}</p>
@@ -24,4 +18,3 @@ class toDoItem {
     }
 }
 
-toDoItem(crearToDo());
