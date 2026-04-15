@@ -4,14 +4,24 @@
 const title = document.getElementById("title");
 const desc = document.getElementById("desc");
 const date = document.getElementById("date");
-const completed = document.getElementById("completed");
 const btnSubmit = document.getElementById("btn-submit");
+const divTareas = document.getElementById("div-tareas")
 
 class toDoItem {
-    constructor(title, desc, date, completed) {
+    constructor(title, desc, date, divTareas) {
         this.title = title;
         this.desc = desc;
         this.date = date;
-        this.completed = completed;
+        this.divTareas = divTareas;
+    }
+    crearToDo() {
+        divTareas.innerHTML += `div class="tarea">
+            <h1>${this.title}</h1>
+            <p>${this.desc}</p>
+            <span>${this.date}</span>
+            <inpit type="checkbox"></inpit>
+        </div>`
     }
 }
+
+toDoItem(crearToDo());
