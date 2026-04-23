@@ -1,48 +1,54 @@
 // 1 - clase toDo, que acepte el valor de los inputs de Tutiulo, Descripcion, Fecha y Prioridad
 // 2 - que la clase tenga propiedades de agregar todo, eliminar item, cambiar prioridad de todo, setear todo como completo, etc
 
-let tareas = []
+let tareas = [];
 
 export default class toDoItem {
-    constructor(title, desc, date, divTareas) {
+    constructor(title, desc, date) {
         this.title = title;
         this.desc = desc;
         this.date = date;
-        this.divTareas = divTareas;
     }
-    crearToDo() {
-        return tareas.push(`
-            <div class="tarea">
-            <h1>${this.title}</h1>
-            <p>${this.desc}</p>
-            <span>${this.date}</span>
-            <input type="checkbox"></input>
-        </div>`)
-    }
+
     render(divTareas) {
         divTareas.innerHTML = "";
+
         tareas.forEach((tarea, index) => {
             const container = document.createElement("div");
+            container.classList.add("tarea");
 
-            const texto = document.createElement("div");
-            texto.textContent = tarea;
+            const titulo = document.createElement("h2");
+            titulo.textContent = tarea.title;
+
+            const descripcion = document.createElement("p");
+            descripcion.textContent = tarea.desc;
+
+            const fecha = document.createElement("span");
+            fecha.textContent = tarea.date;
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
 
             const btn = document.createElement("button");
             btn.textContent = "Delete";
 
             btn.addEventListener("click", () => {
-                this.eliminarToDo(index);
+                this.eliminarToDo(index, divTareas);
             });
 
-            container.appendChild(texto);
+            container.appendChild(titulo);
+            container.appendChild(descripcion);
+            container.appendChild(fecha);
+            container.appendChild(checkbox);
             container.appendChild(btn);
+
             divTareas.appendChild(container);
         });
-        return
     }
-    eliminarToDo(index) {
+
+    eliminarToDo(index, divTareas) {
         tareas.splice(index, 1);
-        this.render();
+        this.render(divTareas);
     }
 }
 
