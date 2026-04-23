@@ -47,10 +47,15 @@ header button {
     text-align: left;
     display: flex;
     align-items: center;
+    font-weight: 600;
 }
 
 header button:hover {
     background-color: rgba(0, 0, 0, 0.219)
+}
+
+button svg {
+    margin-right: 8px;
 }
 
 main {
