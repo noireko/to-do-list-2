@@ -4,6 +4,56 @@
     box-sizing: border-box;
 }
 
-div {
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+.tarea {
     background-color: aqua;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background-color: rgb(247, 247, 247);
+    padding: 15px;
+
+}
+
+header h1 {
+    padding: 10px 0;
+}
+
+header button {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 5px 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+header button:hover {
+    background-color: rgba(0, 0, 0, 0.219)
+}
+
+main {
+    flex: 1;
+    margin-left: 18%;
 }
